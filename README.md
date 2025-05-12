@@ -1,6 +1,6 @@
 # Заняття 3 - Компоненти та колекції
 
-- Бібліотека React
+- [Бібліотека React](https://github.com/goitacademy/react-v3-course-track/blob/03-components/src/assets/component-tree.png)
   - Стандартизація розробки
   - Екосистема бібліотек
 - Рендер додатка в DOM у файлі `main.tsx`
@@ -12,11 +12,11 @@
   - JSX вирази у розмітці та атрибутах
   - Правило спільного батька
   - Фрагменти
-- Компоненти
+- [Компоненти](https://github.com/goitacademy/react-v3-course-track/blob/03-components/src/assets/component.png)
   - Папка `src/components`
   - Кореневий компонент `App`
   - Дефолтний імпорт та експорт компонентів
-- Налаштування компонента
+- [Налаштування компонента](https://raw.githubusercontent.com/goitacademy/react-v3-course-track/refs/heads/03-components/src/assets/props.png)
   - Параметр `props`
   - Типізація пропсів (`interface ComponentNameProps`)
   - Деструктуризація пропсів
