@@ -1,4 +1,4 @@
 /**
  * - Прості типи: any, number, string, boolean, null, undefined
- * - Виведення типів
+ * - Виведення типів (type inference)
  */

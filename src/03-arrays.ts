@@ -4,6 +4,7 @@
  * - Типізація масиву об'єктів
  */
 
+/***************** 1 *****************/
 const planets = [
   "Mercury",
   "Venus",
@@ -15,6 +16,7 @@ const planets = [
   "Neptune",
 ];
 
+/***************** 2 *****************/
 const orders = [
   { email: "j.mercer@mail.com", total: 120 },
   { email: "emily.watts@mail.com", total: 85 },

@@ -1,10 +1,13 @@
 /**
  * - Union
- * - Літеральні типи ( "pending", "shipped", "delivered", "canceled")
+ * - Літеральні типи ( )
  */
 
+/***************** 1 *****************/
+// "pending", "shipped", "delivered", "canceled"
 let status = "pending";
 
+/***************** 2 *****************/
 // delivery: "drone", "courier", "pickup"
 // deliveryTime: "morning", "afternoon", "evening"
 const order = {
