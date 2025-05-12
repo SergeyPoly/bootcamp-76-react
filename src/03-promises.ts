@@ -2,7 +2,7 @@
  * Типізація промісів
  */
 
-/* 1 */
+/***************** 1 *****************/
 const getData = () => {
   return new Promise((resolve) => {
     setTimeout(() => resolve("Hello, TypeScript!"), 1000);
@@ -11,7 +11,7 @@ const getData = () => {
 
 getData().then((result) => console.log(result)); // "Hello, TypeScript!"
 
-/* 2 */
+/***************** 2 *****************/
 interface User {
   id: number;
   name: string;

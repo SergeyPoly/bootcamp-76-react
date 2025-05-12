@@ -2,7 +2,25 @@
  * Узагальнені типи (generics)
  */
 
-/* 1 */
+/***************** 1 *****************/
+function foo(value) {
+  console.log(value);
+}
+
+foo(5);
+foo("hello");
+foo(false);
+foo([1, 2]);
+foo([1, "hello"]);
+
+interface User {
+  username: string;
+  age: number;
+}
+
+foo({ username: "mango", age: 5 });
+
+/***************** 2 *****************/
 function getFirstElement(arr) {
   return arr[0];
 }
@@ -10,7 +28,7 @@ function getFirstElement(arr) {
 getFirstElement([10, 20, 30]); // 10
 getFirstElement(["Alice", "Bob"]); // "Alice"
 
-/* 2 */
+/***************** 3 *****************/
 function shuffle(array) {
   return array.sort(() => Math.random() - 0.5);
 }
@@ -18,7 +36,7 @@ function shuffle(array) {
 const mixedNums = shuffle([1, 2, 3, 4]);
 const mixedWords = shuffle(["apple", "banana", "cherry"]);
 
-/* 3 */
+/***************** 4 *****************/
 function saveToStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
@@ -37,7 +55,7 @@ function loadFromStorage(key) {
 const user = loadFromStorage("user");
 const clicks = loadFromStorage("clicks");
 
-/* 4 */
+/***************** 5 *****************/
 function max(array, selector) {
   return array.reduce((prev, curr) =>
     selector(curr) > selector(prev) ? curr : prev
