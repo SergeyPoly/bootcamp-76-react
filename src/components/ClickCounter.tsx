@@ -4,6 +4,6 @@
  * - Рендериться у App
  */
 
-export default function Counter() {
+export default function ClickCounter() {
   return <button>{/* count */}</button>;
 }

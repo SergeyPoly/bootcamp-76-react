@@ -11,13 +11,13 @@
 ## Стан компонента
 
 - Реактивність
-- [Стан компонента](https://raw.githubusercontent.com/goitacademy/react-course-track/03-state/assets/state.png)
-- Поняття **оновлення** та **рендера** компонента
+- [Стан компонента](https://raw.githubusercontent.com/goitacademy/react-v3-course-track/refs/heads/04-state/src/assets/state.png)
+- [Поняття **оновлення** та **рендера** компонента](https://raw.githubusercontent.com/goitacademy/react-v3-course-track/refs/heads/04-state/src/assets/component-update.png)
 - Хук `useState`
 - Обмеження хуків
 - Асинхронність оновлення стану
 - Локальність стану з `ClickCounter`
-- [Підняття стану](https://raw.githubusercontent.com/goitacademy/react-course-track/03-state/assets/lifting-state.png)
+- [Підняття стану](https://raw.githubusercontent.com/goitacademy/react-v3-course-track/refs/heads/04-state/src/assets/lifting-state.png)
 - Компоненти `Counter` та `CountDisplay`
 - Декілька станів (зробити ефект toggle з `setIsVisible(!isVisible)`)
 - Оновлення об'єктів
