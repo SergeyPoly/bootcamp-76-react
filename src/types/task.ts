@@ -3,3 +3,13 @@ export interface Task {
   text: string;
   completed: boolean;
 }
+
+export interface NewTaskData {
+  text: string;
+}
+
+export interface TaskUpdateData {
+  id: string;
+  text?: string;
+  completed?: boolean;
+}
