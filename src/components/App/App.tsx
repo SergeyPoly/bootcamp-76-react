@@ -26,7 +26,7 @@ export default function App() {
         </button>
       </header>
       {isLoading && <strong className={css.loading}>Loading tasks...</strong>}
-      {data && !isLoading && <TaskList contacts={data} />}
+      {data && !isLoading && <TaskList tasks={data} />}
       {isModalOpen && (
         <Modal onClose={closeModal}>
           <TaskForm />
