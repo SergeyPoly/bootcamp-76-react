@@ -9,26 +9,26 @@
  */
 
 /***************** 1 *****************/
-// type Status = "pending" | "fulfilled" | "rejected";
+type Status = "pending" | "fulfilled" | "rejected";
 // enum Status {
 //   Pending = "pending",
 //   Fulfilled = "fulfilled",
 //   Rejected = "rejected",
 // }
 
-let requestStatus;
+let requestStatus: Status = "pending";
 
 /***************** 2 *****************/
 // type Code = 200 | 201 | 400 | 500;
 
-// enum ReqCode {
-//   Success = 200,
-//   Created = 201,
-//   NotFound = 400,
-//   ServerError = 500,
-// }
+enum ReqCode {
+  Success = 200,
+  Created = 201,
+  NotFound = 400,
+  ServerError = 500,
+}
 
-let requestCode;
+let requestCode: ReqCode = ReqCode.Created;
 
 /***************** 3 *****************/
 enum Role {

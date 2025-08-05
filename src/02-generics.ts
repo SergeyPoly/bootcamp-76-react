@@ -3,14 +3,15 @@
  */
 
 /***************** 1 *****************/
-function foo(value) {
+function foo<T>(value: T): T {
   console.log(value);
+  return value;
 }
 
-foo(5);
-foo("hello");
-foo(false);
-foo([1, 2]);
+foo<number>(5);
+foo<string>("hello");
+foo<boolean>(false);
+foo<number[]>([1, 2]);
 foo([1, "hello"]);
 
 interface User {
@@ -18,54 +19,63 @@ interface User {
   age: number;
 }
 
-foo({ username: "mango", age: 5 });
+foo<User>({ username: "mango", age: 5 });
 
 /***************** 2 *****************/
-function getFirstElement(arr) {
+function getFirstElement<T>(arr: T[]): T {
   return arr[0];
 }
 
-getFirstElement([10, 20, 30]); // 10
-getFirstElement(["Alice", "Bob"]); // "Alice"
+getFirstElement<number>([10, 20, 30]); // 10
+getFirstElement<string>(["Alice", "Bob"]); // "Alice"
 
 /***************** 3 *****************/
-function shuffle(array) {
+function shuffle<T>(array: T[]): T[] {
   return array.sort(() => Math.random() - 0.5);
 }
 
-const mixedNums = shuffle([1, 2, 3, 4]);
-const mixedWords = shuffle(["apple", "banana", "cherry"]);
+const mixedNums = shuffle<number>([1, 2, 3, 4]);
+const mixedWords = shuffle<string>(["apple", "banana", "cherry"]);
 
 /***************** 4 *****************/
-function saveToStorage(key, value) {
+function saveToStorage<T>(key: string, value: T): void {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
-saveToStorage("user", "Jacob Peterson");
-saveToStorage("clicks", 8);
+saveToStorage<string>("user", "Jacob Peterson");
+saveToStorage<number>("clicks", 8);
 
-function loadFromStorage(key) {
+function loadFromStorage<T>(key: string): T | null {
   const item = localStorage.getItem(key);
+  // return JSON.parse(item) as T;
   if (item !== null) {
     return JSON.parse(item);
   }
+
   return null;
 }
 
-const user = loadFromStorage("user");
-const clicks = loadFromStorage("clicks");
+const user = loadFromStorage<string>("user");
+const clicks = loadFromStorage<number>("clicks");
+
+// const parsedUser = JSON.parse("user") as string;
 
 /***************** 5 *****************/
-function max(array, selector) {
+interface Product {
+  name: string;
+  price: number;
+}
+
+function max<T>(array: T[], selector: (item: T) => number): T {
   return array.reduce((prev, curr) =>
     selector(curr) > selector(prev) ? curr : prev
   );
 }
 
-const products = [
+const products: Product[] = [
   { name: "Laptop", price: 1000 },
   { name: "Phone", price: 800 },
 ];
 
-const mostExpensive = max(products, (p) => p.price);
+const mostExpensive = max<Product>(products, (p) => p.price);
 // → { name: "Laptop", price: 1000 }

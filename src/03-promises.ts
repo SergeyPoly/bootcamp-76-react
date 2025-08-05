@@ -3,7 +3,7 @@
  */
 
 /***************** 1 *****************/
-const getData = () => {
+const getData = (): Promise<string> => {
   return new Promise((resolve) => {
     setTimeout(() => resolve("Hello, TypeScript!"), 1000);
   });
@@ -17,7 +17,7 @@ interface User {
   name: string;
 }
 
-const getUser = () => {
+const getUser = (): Promise<User> => {
   return new Promise((resolve) => {
     setTimeout(() => resolve({ id: 1, name: "Alice" }), 1000);
   });
@@ -25,7 +25,7 @@ const getUser = () => {
 
 getUser().then((user) => console.log(user.name)); // "Alice"
 
-const getUsers = () => {
+const getUsers = (): Promise<User[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([

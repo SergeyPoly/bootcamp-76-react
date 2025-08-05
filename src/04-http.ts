@@ -26,17 +26,34 @@ interface GetPostsResponse {
   limit: number;
 }
 
-const getAllPosts = async () => {
-  const response = await axios.get("https://dummyjson.com/posts");
+const getAllPosts = async (): Promise<GetPostsResponse> => {
+  const response = await axios.get<GetPostsResponse>(
+    "https://dummyjson.com/posts"
+  );
   return response.data;
 };
 
-const getPostById = async (postId) => {
-  const response = await axios.get(`https://dummyjson.com/posts/${postId}`);
+getAllPosts().then((data) => console.log(data.posts));
+
+const getPostById = async (postId: number): Promise<Post> => {
+  const response = await axios.get<Post>(
+    `https://dummyjson.com/posts/${postId}`
+  );
   return response.data;
 };
 
-const createPost = async (newPost) => {
-  const response = await axios.post("https://dummyjson.com/posts/add", newPost);
+interface NewPost {
+  title: string;
+  body: string;
+  tags: string[];
+}
+
+// type NewPost = Pick<Post, "title" | "body" | "tags">;
+
+const createPost = async (newPost: NewPost): Promise<Post> => {
+  const response = await axios.post<Post>(
+    "https://dummyjson.com/posts/add",
+    newPost
+  );
   return response.data;
 };
