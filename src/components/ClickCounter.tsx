@@ -4,6 +4,13 @@
  * - Рендериться у App
  */
 
-export default function ClickCounter() {
-  return <button>{/* count */}</button>;
+import { useState } from "react";
+
+interface ClickCounterProps {
+  clicks: number;
+  onClick: () => void;
+}
+
+export default function ClickCounter({ clicks, onClick }: ClickCounterProps) {
+  return <button onClick={onClick}>Clicks: {clicks}</button>;
 }

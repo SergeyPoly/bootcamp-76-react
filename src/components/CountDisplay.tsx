@@ -3,7 +3,11 @@
  * - Рендериться у App
  */
 
-export default function CountDisplay() {
+interface CountDisplayProps {
+  count: number;
+}
+
+export default function CountDisplay({ count }: CountDisplayProps) {
   // Звідки взяти count?
-  return <div>The current counter value is {/* count */}</div>;
+  return <div>The current counter value is {count}</div>;
 }
