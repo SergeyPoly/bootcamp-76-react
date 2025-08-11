@@ -1,8 +1,13 @@
+import type { Article } from "../../types/article";
 import css from "./ArticleList.module.css";
 
-export default function ArticleList({ items }) {
+interface ArticleListProps {
+  items: Article[];
+}
+
+export default function ArticleList({ items }: ArticleListProps) {
   return (
-    <ul className={css.list}>
+    <ol className={css.list}>
       {items.map((item) => (
         <li key={item.objectID}>
           <a className={css.link} href={item.url}>
@@ -10,6 +15,6 @@ export default function ArticleList({ items }) {
           </a>
         </li>
       ))}
-    </ul>
+    </ol>
   );
 }
